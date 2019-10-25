@@ -6,7 +6,7 @@
 FROM php:7.3-fpm
 
 # Copy composer.lock and composer.json
-# COPY composer.lock composer.json /var/www/
+# COPY composer.lock composer.json /usr/share/nginx/html/
 
 # Root directory path
 ARG ROOT_DIR=/usr/share/nginx/html
@@ -52,16 +52,16 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
-COPY . /var/www
+COPY . /usr/share/nginx/html
 
 # Copy existing application directory permissions
-COPY --chown=www:www . /var/www
+COPY --chown=www:www . /usr/share/nginx/html
 
 # Change current user to www
 USER www
 
 # Install Laravel
-RUN composer global require laravel/installer
+# RUN composer global require laravel/installer
 
 # # Generate project
 # RUN composer create-project --prefer-dist laravel/laravel laravel-test-i
