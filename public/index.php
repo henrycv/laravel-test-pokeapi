@@ -1,5 +1,22 @@
 <?php
 
+// try {
+//     $host = 'docker-mysql';
+//     $user = 'test';
+//     $pass = 'test';
+//     $db = 'test';
+//     $mbd = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+//     foreach($mbd->query('SELECT * from FOO') as $fila) {
+//         print_r($fila);
+//     }
+//     $mbd = null;
+// } catch (PDOException $e) {
+//     print "¡Error!: " . $e->getMessage() . "<br/>";
+//     die();
+// }
+// die;
+
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
